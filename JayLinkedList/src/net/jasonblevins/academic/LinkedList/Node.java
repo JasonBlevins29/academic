@@ -1,4 +1,4 @@
-package net.jasonblevins.academic.JayLinkedList;
+package net.jasonblevins.academic.LinkedList;
 
 public class Node<T> {
 	public T data;
@@ -18,9 +18,12 @@ public class Node<T> {
 		this.next = null;
 	}
 
+	/**
+	 * Returns a string representation of the data.
+	 */
 	public String toString() {
 		if (this.data == null) {
-			return "end";
+			return "null data";
 		} else {
 			return this.data.toString();
 

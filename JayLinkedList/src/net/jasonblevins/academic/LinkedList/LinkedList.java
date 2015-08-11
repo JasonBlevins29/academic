@@ -1,5 +1,11 @@
-package net.jasonblevins.academic.JayLinkedList;
+package net.jasonblevins.academic.LinkedList;
 
+/**
+ * @author Jason Blevins In this implementation of a linked list, the head node
+ *         is a "dummy node", whose next contains the real data.
+ *
+ * @param <T>
+ */
 public class LinkedList<T> {
 	public Node<T> head;
 	public int size;
@@ -17,6 +23,12 @@ public class LinkedList<T> {
 		}
 	}
 
+	/**
+	 * Adds a new node containing the passed in data to the end of the linked
+	 * list.
+	 * 
+	 * @param data
+	 */
 	public void add(T data) {
 		/** First, create a new node with the data passed in */
 		Node<T> tempNode = new Node<T>(data);
@@ -54,7 +66,23 @@ public class LinkedList<T> {
 
 	}
 
+	/**
+	 * Adds a node at the beginning of the linked list.
+	 * 
+	 * @param data
+	 */
+	public void addAtBeginning(T data) {
+		/** Create the */
+		Node<T> newNode = new Node<T>(data);
+		newNode.next = head.next;
+		this.head.next = newNode;
+	}
+
+	/**
+	 * Prints the current data in the linked list, the first node is on the top.
+	 */
 	public void print() {
+		/** Since this implementation has the head as a dummy node, the first node to print is head.next */
 		Node<T> currentNode = head.next;
 
 		System.out.println("List: ");
