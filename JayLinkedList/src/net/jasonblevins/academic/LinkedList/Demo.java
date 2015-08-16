@@ -12,6 +12,10 @@ public class Demo {
 
 		linkedListA.print();
 		linkedListB.print();
+		
+		linkedListA.addAll(linkedListB);
+		
+		linkedListA.print();
 
 	}
 
